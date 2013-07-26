@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://127.0.0.1:8020/" />
+<title>Search_Smoke_Multiple_new</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Search_Smoke_Multiple_new</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/TreeOfLife/index.html</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#searchBox</td>
+	<td>Senno</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#searchDiv &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>1000</td>
+	<td></td>
+</tr>
+<!--Checking only leaf2 and leaf4 shows a different image-->
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=#leaf2 &gt; img@src</td>
+	<td>img/leaf_found.png</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=#leaf4 &gt; img@src</td>
+	<td>img/leaf_found.png</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=#leaf1 &gt; img@src</td>
+	<td>img/leaf.png</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!--Checking the leaf image reverts back to the original-->
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=#leaf2 &gt; img@src</td>
+	<td>img/leaf.png</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>css=#leaf4 &gt; img@src</td>
+	<td>img/leaf.png</td>
+</tr>
+<!---->
+
+</tbody></table>
+</body>
+</html>
